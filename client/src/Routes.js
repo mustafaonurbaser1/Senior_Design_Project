@@ -5,7 +5,6 @@ import { ListTodo } from './pages/ListTodo';
 import { AddTodo } from './pages/AddTodo';
 import ShowEvents from './pages/ShowEvents';
 import Settings from './pages/Settings';
-import Logout from './pages/Logout';
 import { Login } from './Login and Register Pages/Login/Login';
 import Register from './Login and Register Pages/Register/Register';
 import { Layout } from './components/Layout';
@@ -28,8 +27,6 @@ export const RouteS = () => {
         {isLogin &&<Route  path = "/addtodo" element = {<AddTodo/>}></Route>}
         {isLogin &&<Route  path = "/showevents" element = {<ShowEvents/>}></Route>}
         {isLogin &&<Route  path = "/settings" element = {<Settings/>}></Route>}
-        {isLogin &&<Route  path = "/logout" element = {<Logout/>}></Route>}
-        
         
         
 
