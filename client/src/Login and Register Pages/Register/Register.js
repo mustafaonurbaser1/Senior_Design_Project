@@ -5,10 +5,10 @@ import PhoneInput from 'react-phone-number-input'
 
 import { MainContainer, InputContainerTwice, InputContainerSolo, WelcomeText,DateContainer,ButtonContainer, LinkContainer, BodyContainer } from './RegisterElements'
 import { StyledInputSolo, StyledInputTwice,StyledTextArea } from './components/Input/InputElements'
+import { StyledButton } from './components/Button/ButtonElement'
 
 import './style.css'
 import "react-datepicker/dist/react-datepicker.css";
-import { StyledButton } from './components/Button/ButtonElement'
 
 const initialState = {
   date: null,
@@ -35,10 +35,9 @@ function reducer(state, action) {
 
 const Register = () => {
 
-  const [value, setValue] = useState()
+  const [phone, setPhone] = useState()
   const [state, dispatch] = useReducer(reducer, initialState)
-
-
+  
 
   return (
     <BodyContainer>
@@ -55,7 +54,7 @@ const Register = () => {
         </InputContainerSolo>
 
         <InputContainerSolo>
-        <PhoneInput placeholder="Enter phone number" value={value} onChange={setValue}/>
+        <PhoneInput placeholder="Enter phone number" value={phone} onChange={setPhone}/>
         </InputContainerSolo>
 
         <DateContainer>

@@ -26,28 +26,28 @@ color: #ffffff;
 
 overflow-y: scroll;
 @media only screen and (max-width:320px) {
-    width: 80vw;
-    height: 90vh;
+    width: 70vw;
+    height: 60vh;
 }
 @media only screen and (min-width:360px) {
-    width: 80vw;
-    height: 90vh;
+    width: 70vw;
+    height: 60vh;
 }
 @media only screen and (min-width:411px) {
-    width: 80vw;
-    height: 90vh;
+    width: 60vw;
+    height: 55vh;
 }
 @media only screen and (min-width:768px) {
-    width: 80vw;
-    height: 80vh;    
+    width: 60vw;
+    height: 65vh;    
 }
 @media only screen and (min-width:1024px) {
-    width: 80vw;
-    height: 90vh;   
+    width: 60vw;
+    height: 65vh;   
 }
 @media only screen and (min-width:1280px) {
-    width: 80vw;
-    height: 90vh;
+    width: 65vw;
+    height: 60vh;
     
 }
 `;
@@ -57,6 +57,7 @@ export const WelcomeText = styled.h2`
 margin:3rem 0 2rem 0;
 letter-spacing: 0.4rem;
 text-transform: uppercase;
+padding:3px 5px;
 `;
 
 export const InputContainerTwice = styled.div`
@@ -93,7 +94,7 @@ margin: 2rem 0 5rem 0;
 width: 50%;
 display: flex;
 justify-content: center;
-align-items: center;
+align-items: flex-end;
 `
 
 export const LinkContainer = styled.div`
