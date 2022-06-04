@@ -27,8 +27,8 @@ text-transform: uppercase;
 letter-spacing: 0.4rem;
 
 @media only screen and (max-width:320px) {
-    width: 80vw;
-    height: 90vh;
+    width: 70vw;
+    height: 60vh;
 
     hr{
         margin-bottom: 0.3rem;
@@ -41,33 +41,28 @@ letter-spacing: 0.4rem;
 }
 
 @media only screen and (min-width:360px) {
-    width: 80vw;
-    height: 90vh;
+    width: 70vw;
+    height: 60vh;
 
     h4{
         font-size: small;
     }
 }
-
 @media only screen and (min-width:411px) {
-    width: 80vw;
-    height: 90vh;
+    width: 60vw;
+    height: 55vh;
 }
-
 @media only screen and (min-width:768px) {
-    width: 80vw;
-    height: 80vh;    
+    width: 60vw;
+    height: 65vh;    
 }
-
 @media only screen and (min-width:1024px) {
-    width: 70vw;
-    height: 90vh;   
+    width: 60vw;
+    height: 65vh;   
 }
-
 @media only screen and (min-width:1280px) {
-    width: 30vw;
+    width: 40vw;
     height: 80vh;
-
     
 }
 `;
