@@ -103,7 +103,9 @@ margin:0 5%;
 export const ImportanceTodoButtons = styled.div`
 display:flex;
 width:80%;
-height: 10%;
+gap: 10px;
+height: 20%;
+margin-top: 10%;
 `
 
 
