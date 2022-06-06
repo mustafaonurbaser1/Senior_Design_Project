@@ -100,15 +100,11 @@ height: 5%;
 margin:0 5%;
 `
 
-export const DateLabel  = styled.label`
-`
-
 export const ButtonContainer = styled.div`
 margin: 5rem 2rem 2rem 0;
 width: 100%;
 display: flex;
 justify-content: flex-end;
-
 `
 
 
