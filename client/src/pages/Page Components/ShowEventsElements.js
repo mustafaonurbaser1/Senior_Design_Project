@@ -6,11 +6,12 @@ height:100vh;
 display: flex;
 flex-direction: column;
 background: ${({theme})=> theme.bg};
+overflow-x: hidden;
 
 `
 
 export const PageNumberContainer = styled.div`
-width: inherit;
+width: 60%;
 height:2.5rem;
 display:flex;
 flex-direction: row;
@@ -24,7 +25,7 @@ width:100%;
 height:80vh;
 display:flex;
 flex-direction: row;
-justify-content: space-content;
+justify-content: ${props => props.numofitems === 1 ? "center" : "space-between" };
 gap:10%;
 margin: 1.5rem 0 0 0;
 padding-left: 5%;
@@ -33,7 +34,7 @@ padding-left: 5%;
 export const ItemContainer = styled.div`
 display: flex;
 flex-direction: column;
-width: 30%;
+width: ${({numofitems}) =>( numofitems === 1 && "70%") || (numofitems === 2 && "50%" )|| "30%"};
 height: 100%;
 text-align: center;
 align-items: center;
@@ -43,16 +44,7 @@ margin-right: 2rem;
 `
 
 export const TitleTodo = styled.h3`
-padding: 5%;
-`
-
-export const Importance = styled.div`
-width: 10%;
-height: 10%;
-border-radius: 100%;
-background:red;
-justify-content: center;
-align-items: center;
+padding: 10% 0 5% 0;
 `
 
 export const HorizontalRule = styled.hr`
@@ -60,7 +52,7 @@ width:90%;
 height: 0.3rem;
 border-radius: 0.8rem;
 border:none;
-margin: 1.5rem 0 1rem 0;
+margin: 0rem 0 1rem 0;
 `
 
 export const ImageContainer = styled.div`

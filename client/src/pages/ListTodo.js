@@ -4,18 +4,20 @@ import { BodyContainer, ButtonContainer, Date, DescriptionContainer, HorizontalR
 import ReactPaginate from 'react-paginate';
 import { StyledButtonDelete } from './Page Components/Components/Button/ButtonElement';
 
-const itemsPerPage = 3;
+
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const ButtonThemeDelete = {
   buttonColorFirst: "#941010",
   buttonColorSecond:"#E72323"
 };
-    function Items({ currentItems }) {
+
+
+    function Items({ currentItems,numItems }) {
       return (
-        <ItemsContainer>
+        <ItemsContainer numofitems = {numItems}>
           {currentItems &&
             currentItems.map((item) => (
-              <ItemContainer key ={item}>
+              <ItemContainer key ={item} numofitems = {numItems}>
                 <TitleTodo >Item {item}</TitleTodo>
                 <Importance></Importance>
                 <HorizontalRule/>
@@ -44,11 +46,7 @@ const ButtonThemeDelete = {
                 
             
 
-              </ItemContainer>
-              
-                
-                
-              
+              </ItemContainer>             
             ))}
         </ItemsContainer>
       );
@@ -59,6 +57,44 @@ const ButtonThemeDelete = {
 
 export const ListTodo = () => {
 
+  const [windowDimension, detectHW] = useState({
+    winWidth: window.innerWidth,
+    winHeight: window.innerHeight,
+  })
+
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight,
+    })
+  }
+
+
+
+  useEffect(() => {
+    window.addEventListener('resize', detectSize)
+
+    return () => {
+      window.removeEventListener('resize', detectSize)
+    }
+  }, [windowDimension])
+
+  const itemsPerPage = numItems();
+
+  function numItems(){
+
+    let items  = 3
+
+    if(windowDimension.winWidth <600){
+      items = 1;
+    }
+    else if(windowDimension.winWidth < 1220 && windowDimension.winWidth >= 600){
+      items = 2;
+    }
+
+    else return 3;
+    return items;
+  }
 
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -110,7 +146,7 @@ export const ListTodo = () => {
                 />
                 </PageNumberContainer>
                 
-                <Items currentItems={currentItems} />
+                <Items currentItems={currentItems} numItems = {itemsPerPage} />
 
             </BodyContainer>
             

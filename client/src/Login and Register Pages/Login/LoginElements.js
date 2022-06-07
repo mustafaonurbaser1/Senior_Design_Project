@@ -8,7 +8,7 @@ height:100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: black;
+background-color: ${({theme}) =>theme.bg};
 
 `
 
@@ -22,9 +22,10 @@ background:rgba(255,255,255,0.15);
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
 backdrop-filter: blur(8.5px);
 border-radius: 10px;
-color: #ffffff;
+color: #000;
 text-transform: uppercase;
 letter-spacing: 0.4rem;
+
 
 @media only screen and (max-width:320px) {
     width: 70vw;
@@ -49,12 +50,12 @@ letter-spacing: 0.4rem;
     }
 }
 @media only screen and (min-width:411px) {
-    width: 60vw;
-    height: 55vh;
+    width: 80vw;
+    height: 70vh;
 }
 @media only screen and (min-width:768px) {
-    width: 60vw;
-    height: 65vh;    
+    width: 80vw;
+    height: 80vh;    
 }
 @media only screen and (min-width:1024px) {
     width: 60vw;
@@ -91,15 +92,15 @@ align-items: center;
 `
 
 export const Register = styled(Link)`
-color:white;
-
+color:black;
+letter-spacing:0.2rem;
 &:hover{
-    color:blue
+    color:blue;
+    letter-spacing:0.3rem;
+    font-size: large;
 }
 
 `
-
-
 export const LoginWith = styled.h5`
 margin-top: 5%;
 

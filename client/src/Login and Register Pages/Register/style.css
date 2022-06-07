@@ -37,13 +37,13 @@
 	padding: 1rem;
 	border: none;
 	outline:none;
-	color:#fff;
+	color:#000;
 	font-size: 1rem;
 	font-weight: bold;	
 }
 
 .PhoneInputInput :focus{
-		color:#3c354e;
+		color:#000;
 		display:inline-block;
 		box-shadow: 0 0 0 0.2rem #b9abe0 ;
 		backdrop-filter: blur(12rem);
@@ -51,7 +51,7 @@
 }
 
 .PhoneInputInput::placeholder{
-	color:#fff;
+	color:#000;
 	font-weight: 100;
 	font-size: 1rem;
 }

@@ -18,24 +18,39 @@ text-align: center;
 justify-content: center;
 height: 90vh;
 width: 50vw;
-background:rgba(255,255,255,0.15);
+background:${({theme})=> theme.b3};
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
 backdrop-filter: blur(8.5px);
 border-radius: 10px;
 color: ${({theme})=> theme.text};
 overflow-y: scroll;
 
+&::-webkit-scrollbar {
+    width: 0.5rem;
+   
+}
+ 
+&::-webkit-scrollbar-track {
+    background-color: ${({theme})=> theme.bg};
+    border-radius: 100px;
+}
+ 
+&::-webkit-scrollbar-thumb {
+    background-color: ${({theme})=> theme.scroll};
+    border-radius: 100px;
+}
+
 @media only screen and (max-width:320px) {
     width: 70vw;
     height: 60vh;
 }
 @media only screen and (min-width:360px) {
-    width: 70vw;
+    width: 65vw;
     height: 60vh;
 }
 @media only screen and (min-width:411px) {
-    width: 60vw;
-    height: 55vh;
+    width: 75vw;
+    height: 70vh;
 }
 @media only screen and (min-width:768px) {
     width: 60vw;

@@ -18,24 +18,39 @@ text-align: center;
 justify-content: center;
 height: 90vh;
 width: 50vw;
-background:rgba(255,255,255,0.15);
+background:${({theme})=> theme.b3};
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
 backdrop-filter: blur(8.5px);
 border-radius: 10px;
 color: ${({theme})=> theme.text};
 overflow-y: scroll;
+&::-webkit-scrollbar {
+    width: 0.5rem;
+   
+}
+ 
+&::-webkit-scrollbar-track {
+    background-color: ${({theme})=> theme.bg};
+    border-radius: 100px;
+}
+ 
+&::-webkit-scrollbar-thumb {
+    background-color: ${({theme})=> theme.scroll};
+    border-radius: 100px;
+}
+
 
 @media only screen and (max-width:320px) {
     width: 70vw;
     height: 60vh;
 }
 @media only screen and (min-width:360px) {
-    width: 70vw;
+    width: 65vw;
     height: 60vh;
 }
 @media only screen and (min-width:411px) {
-    width: 60vw;
-    height: 55vh;
+    width: 75vw;
+    height: 70vh;
 }
 @media only screen and (min-width:768px) {
     width: 60vw;
@@ -61,25 +76,47 @@ text-transform: uppercase;
 padding:3px 5px;
 color:${({theme})=> theme.text};
 `
+export const UsernameDiv = styled.div`
+width: 100%;
+height: 100%;
+grid-area: username;
+`
+export const PpasswordDiv = styled.div`
+width: 100%;
+height: 100%;
+grid-area: password;
+`
+export const ConfirmDiv = styled.div`
+width: 100%;
+height: 100%;
+grid-area: confirm;
+`
 
 
 export const InputContainerMultiple = styled.div`
-display: flex;
+display: grid;
 flex-direction: row;
-justify-content: space-evenly;
-align-items: flex-start;
-height: 20%;
+grid-template-areas: "username password confirm";
+height:10%;
 width: 100%; 
-gap:5%;
+padding: 1rem;
+row-gap:30%;
+column-gap: 0.5rem;
 margin:0 2% 0 2%;
+@media only screen and (max-width:800px) {
+    height: 20%;
+    grid-template-areas: "username username username username" "password password confirm confirm";
+    
+}
 `
 export const InputContainerSolo = styled.div`
 display: flex;
 flex-direction: row;
 width: 100%;
-height :20% ;
-
+height :15% ;
+padding: 1rem;
 margin-left: 20px;
+margin-top: 5%;
 `
 
 
@@ -87,9 +124,14 @@ export const DateContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
-width: 35%;
+width: 45%;
 height: 5%;
 margin-left: 2%;
+
+@media only screen and (max-width:800px){
+    width: 70%;
+}
+
 `
 
 export const DateAndImageContainer = styled.div`

@@ -1,23 +1,22 @@
 import React,{useState,useEffect} from 'react'
 import { Layout } from '../components/Layout'
-import { BodyContainer, ButtonContainer, Date, DescriptionContainer, HorizontalRule, ImageContainer, Importance, ItemContainer, ItemsContainer, PageNumberContainer, TitleTodo } from './Page Components/ShowEventsElements'
+import { BodyContainer, ButtonContainer, Date, DescriptionContainer, HorizontalRule, ImageContainer, ItemContainer, ItemsContainer, PageNumberContainer, TitleTodo } from './Page Components/ShowEventsElements'
 import ReactPaginate from 'react-paginate';
 import { StyledButtonDelete } from './Page Components/Components/Button/ButtonElement';
 
-const itemsPerPage = 3;
+
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const ButtonThemeDelete = {
   buttonColorFirst: "#941010",
   buttonColorSecond:"#E72323"
 };
-    function Items({ currentItems }) {
+    function Items({ currentItems , numItems }) {
       return (
-        <ItemsContainer>
+        <ItemsContainer numofitems = {numItems}>
           {currentItems &&
             currentItems.map((item) => (
-              <ItemContainer key ={item}>
+              <ItemContainer key ={item} numofitems = {numItems}>
                 <TitleTodo >Item {item}</TitleTodo>
-                <Importance></Importance>
                 <HorizontalRule/>
                 <ImageContainer>
 
@@ -44,17 +43,55 @@ const ButtonThemeDelete = {
                 
             
 
-              </ItemContainer>
-              
-                
-                
-              
+              </ItemContainer>             
             ))}
         </ItemsContainer>
       );
       
     }
 const ShowEvents = () => {
+
+  
+  const [windowDimension, detectHW] = useState({
+    winWidth: window.innerWidth,
+    winHeight: window.innerHeight,
+  })
+
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight,
+    })
+  }
+
+
+
+  useEffect(() => {
+    window.addEventListener('resize', detectSize)
+
+    return () => {
+      window.removeEventListener('resize', detectSize)
+    }
+  }, [windowDimension])
+
+  const itemsPerPage = numItems();
+
+  function numItems(){
+
+    let items  = 3
+
+    if(windowDimension.winWidth <600){
+      items = 1;
+    }
+    else if(windowDimension.winWidth < 1220 && windowDimension.winWidth >= 600){
+      items = 2;
+    }
+
+    else return 3;
+    return items;
+  }
+
+
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   // Here we use item offsets; we could also use page offsets
@@ -105,7 +142,7 @@ const ShowEvents = () => {
                 />
                 </PageNumberContainer>
                 
-                <Items currentItems={currentItems} />
+                <Items currentItems={currentItems} numItems = {itemsPerPage} />
 
             </BodyContainer>
             

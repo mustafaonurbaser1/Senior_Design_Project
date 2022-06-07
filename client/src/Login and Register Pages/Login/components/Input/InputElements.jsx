@@ -10,7 +10,7 @@ height: 3rem;
 padding: 1rem;
 border: none;
 outline:none;
-color:#fff;
+color:#000;
 font-size: 1rem;
 font-weight: bold;
 
@@ -23,7 +23,7 @@ font-weight: bold;
 }
 
 &::placeholder{
-    color:#fff;
+    color:#000;
     font-weight: 100;
     font-size: 1rem;
 }

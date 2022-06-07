@@ -1,9 +1,9 @@
 import React, {useState,useReducer}from 'react'
 import { Layout } from '../components/Layout'
-import { BodyContainer, MainContainer, WelcomeText, InputContainerSolo, DateContainer, DateAndImageContainer,ButtonContainer,InputContainerMultiple } from './Page Components/SettingsElements';
-import { StyledInputSolo, StyledInputTwice,StyledTextArea,InputLabel } from './Page Components/Components/Input/InputElements'
+import { BodyContainer, MainContainer, WelcomeText, InputContainerSolo, DateContainer, DateAndImageContainer,ButtonContainer,InputContainerMultiple, UsernameDiv, PpasswordDiv, ConfirmDiv } from './Page Components/SettingsElements';
+import { StyledInputSolo } from './Page Components/Components/Input/InputElements'
 import {DateSingleInput} from '@datepicker-react/styled'
-import { ImportantButton,NotImportantButton,NormalButton, StyledButton } from './Page Components/Components/Button/ButtonElement'
+import { StyledButton } from './Page Components/Components/Button/ButtonElement'
 import PhoneInput from 'react-phone-number-input'
 
 const Settings = () => {
@@ -45,9 +45,17 @@ const Settings = () => {
         <WelcomeText>Settings</WelcomeText>
 
         <InputContainerMultiple>
-          <StyledInputSolo placeholder={"Change Username"}/>
-          <StyledInputSolo placeholder={"Change Password"} type={"password"}/>
+          <UsernameDiv>
+            <StyledInputSolo placeholder={"Change Username"}/>
+          </UsernameDiv>
+
+          <PpasswordDiv>
+            <StyledInputSolo placeholder={"Change Password"} type={"password"}/>
+          </PpasswordDiv>
+
+          <ConfirmDiv>
           <StyledInputSolo placeholder={"Confirm Password"}type={"password"}/>
+          </ConfirmDiv>
         </InputContainerMultiple>
 
         <InputContainerSolo>

@@ -9,7 +9,7 @@ height: 3rem;
 padding: 1rem;
 border: none;
 outline:none;
-color:#fff;
+color:#000;
 font-size: 1rem;
 font-weight: bold;
 &:focus{
@@ -20,7 +20,7 @@ font-weight: bold;
     border-radius: 2rem;
 }
 &::placeholder{
-    color:#fff;
+    color:#000;
     font-weight: 100;
     font-size: 1rem;
 }
@@ -35,7 +35,7 @@ height: 3rem;
 padding: 1rem;
 border: none;
 outline:none;
-color:#fff;
+color:#000;
 font-size: 1rem;
 font-weight: bold;
 &:focus{
@@ -46,7 +46,7 @@ font-weight: bold;
     border-radius: 2rem;
 }
 &::placeholder{
-    color:#fff;
+    color:#000;
     font-weight: 100;
     font-size: 1rem;
 }
@@ -62,7 +62,7 @@ height: 100%;
 padding: 1rem;
 border: none;
 outline:none;
-color:#fff;
+color:#000;
 font-size: 1rem;
 font-weight: bold;
 resize:none;
@@ -75,7 +75,7 @@ resize:none;
     border-radius: 2rem;
 }
 &::placeholder{
-    color:#fff;
+    color:#000;
     font-weight: 100;
     font-size: 1rem;
 }

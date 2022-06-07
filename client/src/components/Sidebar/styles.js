@@ -9,7 +9,7 @@ background: ${({theme})=> theme.bg};
 height:100vh;
 padding: ${v.lgSpacing};
 position:relative;
-
+border-right: 0.05rem solid;
 `
 
 export const SSidebarButton = styled.button`

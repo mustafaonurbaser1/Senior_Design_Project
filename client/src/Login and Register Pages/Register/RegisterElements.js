@@ -6,48 +6,79 @@ height:100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: black;
+background-color: white;
 
 `
 
 export const MainContainer = styled.div`
 display:flex;
-flex-direction: row;
-flex-wrap: wrap;
-text-align: center;
-justify-content: center;
-height: 90vh;
-width: 50vw;
+align-items: center;
+flex-direction: column;
+height: 80vh;
+width: 30vw;
 background:rgba(255,255,255,0.15);
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
 backdrop-filter: blur(8.5px);
 border-radius: 10px;
-color: #ffffff;
-
+gap:10%;
+color: #000;
+text-transform: uppercase;
+letter-spacing: 0.4rem;
 overflow-y: scroll;
+overflow-x:hidden ;
+
+&::-webkit-scrollbar {
+    width: 0.5rem;
+   
+}
+ 
+&::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 100px;
+}
+ 
+&::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 100px;
+}
+
 @media only screen and (max-width:320px) {
     width: 70vw;
     height: 60vh;
+
+    hr{
+        margin-bottom: 0.3rem;
+    }
+
+    h4{
+        font-size: small;
+    }
+    
 }
+
 @media only screen and (min-width:360px) {
     width: 70vw;
     height: 60vh;
+
+    h4{
+        font-size: small;
+    }
 }
 @media only screen and (min-width:411px) {
-    width: 60vw;
-    height: 55vh;
+    width: 80vw;
+    height: 70vh;
 }
 @media only screen and (min-width:768px) {
-    width: 60vw;
-    height: 65vh;    
+    width: 80vw;
+    height: 80vh;    
 }
 @media only screen and (min-width:1024px) {
     width: 60vw;
     height: 65vh;   
 }
 @media only screen and (min-width:1280px) {
-    width: 65vw;
-    height: 60vh;
+    width: 40vw;
+    height: 80vh;
     
 }
 `;

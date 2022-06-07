@@ -6,11 +6,12 @@ height:100vh;
 display: flex;
 flex-direction: column;
 background: ${({theme})=> theme.bg};
+overflow-x: hidden;
 
 `
 
 export const PageNumberContainer = styled.div`
-width: inherit;
+width: 60%;
 height:2.5rem;
 display:flex;
 flex-direction: row;
@@ -24,7 +25,7 @@ width:100%;
 height:80vh;
 display:flex;
 flex-direction: row;
-justify-content: space-content;
+justify-content: ${props => props.numofitems === 1 ? "center" : "space-between" };
 gap:10%;
 margin: 1.5rem 0 0 0;
 padding-left: 5%;
@@ -33,7 +34,7 @@ padding-left: 5%;
 export const ItemContainer = styled.div`
 display: flex;
 flex-direction: column;
-width: 30%;
+width: ${({numofitems}) =>( numofitems === 1 && "70%") || (numofitems === 2 && "50%") || "30%"};
 height: 100%;
 text-align: center;
 align-items: center;
