@@ -5,8 +5,8 @@ export const StyledButton = styled.button`
 background: linear-gradient(to right , ${props => props.ButtonTheme.buttonColorFirst} 10%,${props => props.ButtonTheme.buttonColorSecond} 90%);
 text-transform: uppercase;
 letter-spacing: 0.2rem;
-width: 65%;
-height: 3rem;
+width: 30%;
+height: 3.5rem;
 border: none;
 color:white;
 border-radius: 2rem;
@@ -15,6 +15,7 @@ cursor: pointer;
   animation-name: change;
   animation-duration: 0.63s;
   animation-iteration-count: infinite;
+  transform: scale(1.1);
     
 }
 @keyframes change {

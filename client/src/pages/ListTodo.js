@@ -6,6 +6,7 @@ import { StyledButtonDelete } from './Page Components/Components/Button/ButtonEl
 
 
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+
 const ButtonThemeDelete = {
   buttonColorFirst: "#941010",
   buttonColorSecond:"#E72323"
@@ -17,9 +18,9 @@ const ButtonThemeDelete = {
         <ItemsContainer numofitems = {numItems}>
           {currentItems &&
             currentItems.map((item) => (
-              <ItemContainer key ={item} numofitems = {numItems}>
+              <ItemContainer key ={item} numofitems = {numItems} importance = {"normal"}>
                 <TitleTodo >Item {item}</TitleTodo>
-                <Importance></Importance>
+                <Importance importance = "normal"></Importance>
                 <HorizontalRule/>
                 <ImageContainer>
 

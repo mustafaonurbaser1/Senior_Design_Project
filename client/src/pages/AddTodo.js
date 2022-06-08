@@ -4,6 +4,7 @@ import { BodyContainer, MainContainer, WelcomeText, InputContainerSolo, DateCont
 import { StyledInputSolo, StyledInputTwice,StyledTextArea } from './Page Components/Components/Input/InputElements'
 import {DateRangeInput} from '@datepicker-react/styled'
 import { ImportantButton,NotImportantButton,NormalButton, StyledButton } from './Page Components/Components/Button/ButtonElement'
+import { ThemeProvider } from 'styled-components';
 
 
 const initialState = {
@@ -65,6 +66,19 @@ export const AddTodo = () => {
 
           <DateAndImageContainer>
             <DateContainer>
+              <ThemeProvider theme={{
+              breakpoints: ["32em", "48em", "64em"],
+              reactDatepicker: {
+                daySize: [36, 40],
+                inputWidth:[100,"10vw"],
+                inputBorder:["none"],
+                colors: {
+                  accessibility: "#436EB1",
+                  selectedDay: "#436EB1",
+                  primaryColor: "#436EB1"
+                }
+              }
+            }}>
             <DateRangeInput
               onDatesChange={data => dispatch({type: 'dateChange', payload: data})}
               onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
@@ -73,7 +87,9 @@ export const AddTodo = () => {
               focusedInput={state.focusedInput} // START_DATE, END_DATE or null
               displayFormat={"dd/MM/yyyy"}
               />
+              </ThemeProvider>
             </DateContainer>
+            
           </DateAndImageContainer>
 
           <InputContainerSolo>

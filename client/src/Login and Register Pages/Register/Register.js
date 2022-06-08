@@ -3,12 +3,13 @@ import {DateSingleInput} from '@datepicker-react/styled'
 import PhoneInput from 'react-phone-number-input'
 
 
-import { MainContainer, InputContainerTwice, InputContainerSolo, WelcomeText,DateContainer,ButtonContainer, LinkContainer, BodyContainer } from './RegisterElements'
+import { MainContainer, InputContainerTwice, InputContainerSolo, WelcomeText,DateContainer,ButtonContainer, LinkContainer, BodyContainer, ImageContainer } from './RegisterElements'
 import { StyledInputSolo, StyledInputTwice,StyledTextArea } from './components/Input/InputElements'
 import { StyledButton } from './components/Button/ButtonElement'
 
 import './style.css'
 import "react-datepicker/dist/react-datepicker.css";
+import { ThemeProvider } from 'styled-components'
 
 const initialState = {
   date: null,
@@ -57,13 +58,36 @@ const Register = () => {
         <PhoneInput placeholder="Enter phone number" value={phone} onChange={setPhone}/>
         </InputContainerSolo>
 
+        <InputContainerTwice>
         <DateContainer>
-        
+          <ThemeProvider 
+           theme={{
+            breakpoints: ["32em", "48em", "64em"],
+            reactDatepicker: {
+              daySize: [36, 40],
+              inputWidth:[100,"36vw"],
+              inputBorder:["none"],
+              colors: {
+                accessibility: "#436EB1",
+                selectedDay: "#436EB1",
+                primaryColor: "#436EB1"
+              }
+            }
+          }}
+        >
         <DateSingleInput onDateChange={data => dispatch({type: 'dateChange', payload: data})} onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
-          date={state.date} // Date or null
+          date={state.date}
            showDatepicker={state.showDatepicker} /> 
-        
+           </ThemeProvider>
+
+
         </DateContainer>
+        
+        <ImageContainer>
+
+
+        </ImageContainer>
+        </InputContainerTwice>
 
 
         <InputContainerTwice>

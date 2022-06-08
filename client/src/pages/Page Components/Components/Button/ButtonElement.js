@@ -29,8 +29,8 @@ cursor: pointer;
 `
 
 export const ImportantButton = styled.button`
-width: 100%;
-height: 30%;
+width: 25.75%;
+height: 20%;
 border:none;
 background: linear-gradient(to right , ${props => props.ButtonTheme.buttonColorFirst} 10%,${props => props.ButtonTheme.buttonColorSecond} 90%);
 &:hover{
@@ -38,6 +38,7 @@ background: linear-gradient(to right , ${props => props.ButtonTheme.buttonColorF
   animation-duration: 0.63s;
   transform: scale(1.1);
   animation-iteration-count: infinite;
+  height: 30%;
     
 }
 @keyframes change1 {
@@ -50,16 +51,16 @@ background: linear-gradient(to right , ${props => props.ButtonTheme.buttonColorF
 }
 `
 export const NormalButton = styled.button`
-width: 100%;
-height: 30%;
-border: none;
-
+width: 25.75%;
+height: 20%;
+border:none;
 background: linear-gradient(to right , ${props => props.ButtonTheme.buttonColorFirst} 10%,${props => props.ButtonTheme.buttonColorSecond} 90%);
 &:hover{
   animation-name: change2;
   animation-duration: 0.63s;
   transform: scale(1.1);
   animation-iteration-count: infinite;
+  height: 30%;
     
 }
 @keyframes change2 {
@@ -73,15 +74,16 @@ background: linear-gradient(to right , ${props => props.ButtonTheme.buttonColorF
 `
 
 export const NotImportantButton = styled.button`
-width: 100%;
-height: 30%;
-border: none;
+width: 25.75%;
+height: 20%;
+border:none;
 background: linear-gradient(to right , ${props => props.ButtonTheme.buttonColorFirst} 10%,${props => props.ButtonTheme.buttonColorSecond} 90%);
 &:hover{
   animation-name: change3;
   animation-duration: 0.63s;
   transform: scale(1.1);
   animation-iteration-count: infinite;
+  height: 30%;
     
 }
 

@@ -22,6 +22,7 @@ background:${({theme})=> theme.b3};
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
 backdrop-filter: blur(8.5px);
 border-radius: 10px;
+gap:5%;
 color: ${({theme})=> theme.text};
 overflow-y: scroll;
 &::-webkit-scrollbar {
@@ -43,26 +44,32 @@ overflow-y: scroll;
 @media only screen and (max-width:320px) {
     width: 70vw;
     height: 60vh;
+    gap:10%;
 }
 @media only screen and (min-width:360px) {
     width: 65vw;
     height: 60vh;
+    gap:10%;
 }
 @media only screen and (min-width:411px) {
     width: 75vw;
     height: 70vh;
+    gap:10%;
 }
 @media only screen and (min-width:768px) {
     width: 60vw;
-    height: 65vh;    
+    height: 65vh; 
+    gap:10%;   
 }
 @media only screen and (min-width:1024px) {
     width: 60vw;
-    height: 65vh;   
+    height: 70vh; 
+    gap:5%;  
 }
 @media only screen and (min-width:1280px) {
     width: 65vw;
-    height: 60vh;
+    height: 80vh;
+    gap:0%;
  
 }
 `
@@ -73,7 +80,7 @@ margin:1rem 0 0.5rem 0;
 height: 10%;
 letter-spacing: 0.4rem;
 text-transform: uppercase;
-padding:3px 5px;
+
 color:${({theme})=> theme.text};
 `
 export const UsernameDiv = styled.div`
@@ -98,11 +105,10 @@ display: grid;
 flex-direction: row;
 grid-template-areas: "username password confirm";
 height:10%;
-width: 100%; 
+width: 90.5%; 
 padding: 1rem;
 row-gap:30%;
 column-gap: 0.5rem;
-margin:0 2% 0 2%;
 @media only screen and (max-width:800px) {
     height: 20%;
     grid-template-areas: "username username username username" "password password confirm confirm";
@@ -112,11 +118,11 @@ margin:0 2% 0 2%;
 export const InputContainerSolo = styled.div`
 display: flex;
 flex-direction: row;
-width: 100%;
-height :15% ;
+justify-content: space-evenly;
+width: 96%;
+height :15%;
+margin-left: 0%;
 padding: 1rem;
-margin-left: 20px;
-margin-top: 5%;
 `
 
 

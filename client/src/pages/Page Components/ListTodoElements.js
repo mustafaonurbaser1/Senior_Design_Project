@@ -38,20 +38,26 @@ width: ${({numofitems}) =>( numofitems === 1 && "70%") || (numofitems === 2 && "
 height: 100%;
 text-align: center;
 align-items: center;
-border:2px solid;
+border:1px solid;
 gap: 5px;
+border-radius:2rem ;
 margin-right: 2rem;
+
+&:hover{
+    box-shadow: 10px 10px 25px 0 ${({importance}) => (importance === "important" && "rgba(174,54,30,0.42)") || (importance === "normal" && "rgba(219,177,26,0.42)") || "rgba(77,168,80,0.42)"};
+}
 `
 
 export const TitleTodo = styled.h3`
-padding: 5%;
+padding: 3%;
+margin-top: 5%;
 `
 
 export const Importance = styled.div`
 width: 10%;
 height: 10%;
 border-radius: 100%;
-background:red;
+background:${({importance}) => (importance === "important" && "rgba(174,54,30)") || (importance === "normal" && "rgb(219,177,26)") || "rgb(77,168,80)"};
 justify-content: center;
 align-items: center;
 `
@@ -86,8 +92,8 @@ border:2px solid;
 export const Date= styled.div`
 margin-top:5%;
 width: 90%;
-height: 5%;
-padding:0.4rem;
+height: 10%;
+padding:0.54rem 0;
 background-color: white;
 overflow-x: hidden;
 overflow-y: hidden;

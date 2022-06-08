@@ -5,6 +5,7 @@ import { StyledInputSolo } from './Page Components/Components/Input/InputElement
 import {DateSingleInput} from '@datepicker-react/styled'
 import { StyledButton } from './Page Components/Components/Button/ButtonElement'
 import PhoneInput from 'react-phone-number-input'
+import { ThemeProvider } from 'styled-components';
 
 const Settings = () => {
 
@@ -68,9 +69,24 @@ const Settings = () => {
 
         <DateAndImageContainer>
           <DateContainer>
+            <ThemeProvider
+            theme={{
+              breakpoints: ["32em", "48em", "64em"],
+              reactDatepicker: {
+                daySize: [36, 40],
+                inputWidth:[100,"20vw"],
+                inputBorder:["none"],
+                colors: {
+                  accessibility: "#436EB1",
+                  selectedDay: "#436EB1",
+                  primaryColor: "#436EB1"
+                }
+              }
+            }}>
             <DateSingleInput onDateChange={data => dispatch({type: 'dateChange', payload: data})} onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
           date={state.date} // Date or null
           showDatepicker={state.showDatepicker} /> 
+          </ThemeProvider>
           </DateContainer>
         </DateAndImageContainer>
 

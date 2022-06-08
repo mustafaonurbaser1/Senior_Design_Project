@@ -15,7 +15,7 @@ display:flex;
 flex-direction: row;
 flex-wrap: wrap;
 text-align: center;
-justify-content: center;
+justify-content: space-evenly;
 height: 90vh;
 width: 50vw;
 background:${({theme})=> theme.b3};
@@ -62,11 +62,10 @@ overflow-y: scroll;
 }
 @media only screen and (min-width:1280px) {
     width: 65vw;
-    height: 60vh;
+    height: 70vh;
  
 }
 `
-
 
 export const WelcomeText = styled.h2`
 margin:1rem 0 0.5rem 0;
@@ -77,49 +76,42 @@ padding:3px 5px;
 color:${({theme})=> theme.text};
 `
 
-
-export const InputContainerTwice = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-evenly;
-align-items: flex-start;
-height: 20%;
-width: 100%; 
-`
 export const InputContainerSolo = styled.div`
 display: flex;
 flex-direction: row;
+justify-content: space-evenly;
 width: 100%;
-height :20% ;
-
-margin-left: 20px;
+height :15%;
+margin-left: 0%;
+padding: 1rem;
 `
 
 
 export const DateContainer = styled.div`
 display: flex;
-flex-direction: column;
-gap:300%;
-justify-content: flex-start;
-width: 45%;
-height: 10%;
-margin-left: 2%;
+flex-direction: row;
+justify-content: space-evenly;
+width: 100%;
+height :15%;
+margin-left: 0%;
+padding: 1rem;
 `
 
 export const DateAndImageContainer = styled.div`
 display: flex;
 flex-direction: column;
-width: 100%;
+width: 93.5%;
 height: 30%;
 margin:0 5%;
 `
  
-
 export const ImportanceTodoButtons = styled.div`
 display:flex;
-width:80%;
+flex-direction: row;
 gap: 10px;
+width:93.5%;
 height: 20%;
+justify-content: space-evenly;
 margin-top: 10%;
 `
 
@@ -128,7 +120,7 @@ export const DateLabel  = styled.label`
 `
 
 export const ButtonContainer = styled.div`
-margin: 5rem 2rem 2rem 0;
+margin: 1rem 2rem 2rem 0;
 width: 100%;
 display: flex;
 justify-content: flex-end;

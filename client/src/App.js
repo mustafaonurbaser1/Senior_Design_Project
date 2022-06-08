@@ -26,7 +26,7 @@ function App() {
     <GlobalStyle/>
     
     <Helmet>
-        <title>Sidebar</title>
+        <title>Event</title>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&family=Kanit:wght@400;900&family=Poppins:wght@300;400;500;700&family=Readex+Pro:wght@200;300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></link>
