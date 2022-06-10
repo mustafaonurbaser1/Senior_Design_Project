@@ -134,8 +134,8 @@ export const ListTodo = () => {
                {!clicked && 
                
                <DescriptionContainer>
-               <DateContainer><p>Starting Date:16-04-2020</p></DateContainer>
-               <DateContainer><p>Ending Date:24-04-2020</p></DateContainer>
+               <Date><p>Starting Date:16-04-2020</p></Date>
+               <Date><p>Ending Date:24-04-2020</p></Date>
             
                <ButtonContainer>
                   <StyledButtonDelete ButtonTheme = {ButtonThemeDelete} onClick ={() => DeleteTodo(2)}>Delete Todo</StyledButtonDelete>

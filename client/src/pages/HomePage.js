@@ -10,46 +10,11 @@ const ButtonThemeDelete = {
   buttonColorFirst: "#941010",
   buttonColorSecond:"#E72323"
 };
-    function Items({ currentItems , numItems }) {
-      return (
-        <ItemsContainer numofitems = {numItems}>
-          {currentItems &&
-            currentItems.map((item) => (
-              <ItemContainer key ={item} numofitems = {numItems}>
-                <TitleTodo >Item {item}</TitleTodo>
-                <HorizontalRule/>
-                <ImageContainer>
-
-
-                </ImageContainer>
-
-                <HorizontalRule/>
-                <DescriptionContainer>
-                  <p>JKNLns ŞSAM ASIQWK OSKAKF IJKMASG OAIH NJJABJ </p>
-                </DescriptionContainer>
-
-                <Date>
-                  <p>13/08/2022</p>
-                </Date>
-
-                <Date>
-                  <p>13/08/2022</p>
-                </Date>
-
-                <ButtonContainer>
-
-                  <StyledButtonDelete ButtonTheme = {ButtonThemeDelete}>X</StyledButtonDelete>
-                </ButtonContainer>
-                
-            
-
-              </ItemContainer>             
-            ))}
-        </ItemsContainer>
-      );
-      
-    }
+ 
 export const HomePage = () => {
+  const [hover, setHover] = useState(true);
+  const [clicked,setClicked] = useState(true);
+
   const [windowDimension, detectHW] = useState({
     winWidth: window.innerWidth,
     winHeight: window.innerHeight,
@@ -114,6 +79,12 @@ export const HomePage = () => {
   };
   
 
+       
+  const DeleteTodo = (id)=>{
+    console.log(id)
+  } 
+  
+
     return (
         <div style = {{display:"flex"}}>
             <Layout name={"Yusuf"}></Layout>
@@ -140,7 +111,33 @@ export const HomePage = () => {
                 />
                 </PageNumberContainer>
                 
-                <Items currentItems={currentItems} numItems = {itemsPerPage} />
+                <ItemsContainer numofitems = {itemsPerPage}>
+          {currentItems &&
+            currentItems.map((item) => (
+              <ItemContainer onClick={() => {setClicked(!clicked)}} onMouseEnter={() => setHover(true) } onMouseLeave={()=> setHover(false)} key ={item} numofitems = {itemsPerPage} importance = {"normal"}>
+                
+                
+                {hover  && clicked && 
+                <DescriptionContainer hover = {hover}>
+                <TitleTodo > Title Of Events</TitleTodo>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla erat odio, vel aliquam neque fringilla ultricies. Quisque semper cursus nisi, vel posuere leo tincidunt nec. In nisl lacus, accumsan non porttitor sit amet, elementum id li</p>
+                </DescriptionContainer>}
+
+               {!clicked && 
+               
+               <DescriptionContainer>
+               <Date><p>Starting Date:16-04-2020</p></Date>
+               <Date><p>Ending Date:24-04-2020</p></Date>
+            
+               <ButtonContainer>
+                  <StyledButtonDelete ButtonTheme = {ButtonThemeDelete} onClick ={() => DeleteTodo(2)}>Delete Todo</StyledButtonDelete>
+                </ButtonContainer>
+               </DescriptionContainer>
+               
+               }
+              </ItemContainer>             
+            ))}
+        </ItemsContainer>
 
             </BodyContainer>
             
