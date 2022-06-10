@@ -1,11 +1,16 @@
 import React,{useEffect,useState} from 'react'
 import { Layout } from '../components/Layout'
-import { BodyContainer, ButtonContainer, Date, DescriptionContainer, HorizontalRule, ImageContainer, Importance, ItemContainer, ItemsContainer, PageNumberContainer, TitleTodo } from './Page Components/ListTodoElements'
+import { BodyContainer, ButtonContainer, Date, DescriptionContainer, HorizontalRule, Importance, ItemContainer, ItemsContainer, PageNumberContainer, TitleTodo } from './Page Components/ListTodoElements'
 import ReactPaginate from 'react-paginate';
 import { StyledButtonDelete } from './Page Components/Components/Button/ButtonElement';
+import { click } from '@testing-library/user-event/dist/click';
+import { DateContainer } from './Page Components/AddTodoElements';
 
 
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+
+
+
 
 const ButtonThemeDelete = {
   buttonColorFirst: "#941010",
@@ -13,50 +18,10 @@ const ButtonThemeDelete = {
 };
 
 
-    function Items({ currentItems,numItems }) {
-      return (
-        <ItemsContainer numofitems = {numItems}>
-          {currentItems &&
-            currentItems.map((item) => (
-              <ItemContainer key ={item} numofitems = {numItems} importance = {"normal"}>
-                <TitleTodo >Item {item}</TitleTodo>
-                <Importance importance = "normal"></Importance>
-                <HorizontalRule/>
-                <ImageContainer>
-
-
-                </ImageContainer>
-
-                <HorizontalRule/>
-                <DescriptionContainer>
-                  <p>JKNLns ŞSAM ASIQWK OSKAKF IJKMASG OAIH NJJABJ </p>
-                </DescriptionContainer>
-
-                <Date>
-                  <p>13/08/2022</p>
-                </Date>
-
-                <Date>
-                  <p>13/08/2022</p>
-                </Date>
-
-                <ButtonContainer>
-
-                  <StyledButtonDelete ButtonTheme = {ButtonThemeDelete}>X</StyledButtonDelete>
-                </ButtonContainer>
-                
-            
-
-              </ItemContainer>             
-            ))}
-        </ItemsContainer>
-      );
-      
-    }
-
-
 
 export const ListTodo = () => {
+  const [hover, setHover] = useState(true);
+  const [clicked,setClicked] = useState(true);
 
   const [windowDimension, detectHW] = useState({
     winWidth: window.innerWidth,
@@ -80,6 +45,9 @@ export const ListTodo = () => {
     }
   }, [windowDimension])
 
+
+
+  
   const itemsPerPage = numItems();
 
   function numItems(){
@@ -102,11 +70,12 @@ export const ListTodo = () => {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
+  
 
   useEffect(() => {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  
     setCurrentItems(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
@@ -114,11 +83,14 @@ export const ListTodo = () => {
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
+
+
+
+  const DeleteTodo = (id)=>{
+    console.log(id)
+  } 
   
 
     return (
@@ -147,7 +119,33 @@ export const ListTodo = () => {
                 />
                 </PageNumberContainer>
                 
-                <Items currentItems={currentItems} numItems = {itemsPerPage} />
+                <ItemsContainer numofitems = {itemsPerPage}>
+          {currentItems &&
+            currentItems.map((item) => (
+              <ItemContainer onClick={() => {setClicked(!clicked)}} onMouseEnter={() => setHover(true) } onMouseLeave={()=> setHover(false)} key ={item} numofitems = {itemsPerPage} importance = {"normal"}>
+                
+                
+                {hover  && clicked && 
+                <DescriptionContainer hover = {hover}>
+                <TitleTodo > Title Of Todo</TitleTodo>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla erat odio, vel aliquam neque fringilla ultricies. Quisque semper cursus nisi, vel posuere leo tincidunt nec. In nisl lacus, accumsan non porttitor sit amet, elementum id li</p>
+                </DescriptionContainer>}
+
+               {!clicked && 
+               
+               <DescriptionContainer>
+               <DateContainer><p>Starting Date:16-04-2020</p></DateContainer>
+               <DateContainer><p>Ending Date:24-04-2020</p></DateContainer>
+            
+               <ButtonContainer>
+                  <StyledButtonDelete ButtonTheme = {ButtonThemeDelete} onClick ={() => DeleteTodo(2)}>Delete Todo</StyledButtonDelete>
+                </ButtonContainer>
+               </DescriptionContainer>
+               
+               }
+              </ItemContainer>             
+            ))}
+        </ItemsContainer>
 
             </BodyContainer>
             
