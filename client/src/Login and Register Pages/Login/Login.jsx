@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {FaFacebook, FaInstagram,FaTwitter} from 'react-icons/fa'
 import { BodyContainer, ButtonContainer, ForgotPassword, HorizontalRule, IconsContainer, InputContainer, LoginWith, MainContainer,Register,WelcomeText } from './LoginElements'
-import { Input } from './components/Input/Input'
+import { StyledInput } from './components/Input/InputElements'
 import { Button } from './components/Button/Button'
 import { Icon } from './components/Icon/Icon'
+import { useEffect } from 'react'
 
 export const Login = () => {
 
@@ -23,14 +24,28 @@ const InstagramBackground = "linear-gradient(to right, #A12AC4 0%,#ED586C 40% , 
 const TwitterBackground = "linear-gradient(to right, #56C1E1 0% , #35A9CE 50%)"
 
 
+const [email,setEmail]= useState("")
+const [password,setPassword] = useState("")
+
+const [values,setValues] = useState({
+                            email:"",
+                            password:""})
+
+
+useEffect(()=> {
+  setValues({email:email,password:password})
+},[email,password])
+
+console.log(values)
+
   return (
     <BodyContainer>
     <MainContainer>
         <WelcomeText>Welcome</WelcomeText>
         
         <InputContainer>
-          <Input type={"text"} placeholder="Email"/>
-          <Input type={"password"} placeholder="Password"/>
+        <StyledInput type={"text"} placeholder={"Email"}  value={email} onChange = {e => setEmail(e.target.value)}/>
+        <StyledInput type={"password"} placeholder={"Password"}  value={password} onChange = {e => setPassword(e.target.value)}/>
         </InputContainer>
 
         <ButtonContainer>

@@ -120,7 +120,7 @@ export const HomePage = () => {
                 {hover  && clicked && 
                 <DescriptionContainer hover = {hover}>
                 <TitleTodo > Title Of Events</TitleTodo>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla erat odio, vel aliquam neque fringilla ultricies. Quisque semper cursus nisi, vel posuere leo tincidunt nec. In nisl lacus, accumsan non porttitor sit amet, elementum id li</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend venenatis ex eu scelerisque. Nunc condimentum nisi at erat egestas hendrerit. Proin sed luctus nibh.</p>
                 </DescriptionContainer>}
 
                {!clicked && 
