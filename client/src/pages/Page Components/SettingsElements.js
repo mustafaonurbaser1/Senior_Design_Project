@@ -10,21 +10,22 @@ text-align: center;
 background: ${({theme})=> theme.bg};
 `
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.form`
 display:flex;
-flex-direction: row;
-flex-wrap: wrap;
-text-align: center;
-justify-content: center;
-height: 90vh;
-width: 50vw;
-background:${({theme})=> theme.b3};
+align-items: center;
+flex-direction: column;
+height: 80vh;
+width: 30vw;
+background:rgba(255,255,255,0.15);
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
 backdrop-filter: blur(8.5px);
 border-radius: 10px;
-gap:5%;
-color: ${({theme})=> theme.text};
+color: #000;
+gap:1rem;
+text-transform: uppercase;
+letter-spacing: 0.4rem;
 overflow-y: scroll;
+overflow-x:hidden ;
 &::-webkit-scrollbar {
     width: 0.5rem;
    
@@ -77,7 +78,6 @@ overflow-y: scroll;
 
 export const WelcomeText = styled.h2`
 margin:1rem 0 0.5rem 0;
-height: 10%;
 letter-spacing: 0.4rem;
 text-transform: uppercase;
 
@@ -99,59 +99,89 @@ height: 100%;
 grid-area: confirm;
 `
 
-
-export const InputContainerMultiple = styled.div`
+export const BigInputContainer = styled.div`
 display: grid;
-flex-direction: row;
-grid-template-areas: "username password confirm";
-height:10%;
-width: 90.5%; 
-padding: 1rem;
-row-gap:30%;
-column-gap: 0.5rem;
-@media only screen and (max-width:800px) {
-    height: 20%;
-    grid-template-areas: "username username username username" "password password confirm confirm";
-    
+width: 80%;
+height: 100%;
+margin: 1.5rem 0 1.5rem 0;
+grid-template-areas: "username password confirm" 
+"solo solo solo"
+"phone phone phone"
+"date date date"
+"image image image"
+"button button button";
+grid-gap: 2rem;
+
+@media only screen and (max-width:1000px){
+    width: 80%;
+    grid-template-areas: "username username" 
+    "password confirm"
+"solo solo " 
+"phone phone "
+"date date "
+"image image"
+"button button ";
+}
+
+@media only screen and (max-width:600px){
+    width: 90%;
+    grid-template-areas: "username " 
+    "password "
+    "confirm"
+"solo" 
+"phone"
+"date "
+"image"
+"button";
+grid-gap: 5rem;
 }
 `
+
 export const InputContainerSolo = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
-width: 96%;
-height :15%;
-margin-left: 0%;
-padding: 1rem;
+width: 100%;
+grid-area: solo;
+`
+
+export const ImageContainer = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+width: 100%;
+grid-area: image;
 `
 
 
 export const DateContainer = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: flex-start;
-width: 45%;
-height: 5%;
-margin-left: 2%;
+justify-content: center;
+width: 50%;
+grid-area: date;
+
 
 @media only screen and (max-width:800px){
     width: 70%;
 }
-
 `
 
-export const DateAndImageContainer = styled.div`
+export const PhoneContainer = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
+justify-content: space-evenly;
 width: 100%;
-height: 5%;
-margin:0 5%;
+grid-area: phone;
+
+
 `
 
 export const ButtonContainer = styled.div`
 margin: 5rem 2rem 2rem 0;
 width: 100%;
 display: flex;
+grid-area: button;
 justify-content: flex-end;
 `
 

@@ -30,7 +30,7 @@ export const StyledInputSolo = styled.input`
 background: rgba(255,255,255,0.15);
 border-radius: 2rem;
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
-width: 93.5%;
+width: 100%;
 height: 3rem;
 padding: 1rem;
 border: none;
@@ -57,13 +57,14 @@ export const StyledTextArea  =  styled.textarea`
 background: rgba(255,255,255,0.15);
 border-radius: 2rem;
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
-width: 93.5%;
+box-sizing: border-box;
+width: 100%;
 height: 100%;
-padding: 1rem;
+padding: 1rem 1rem 3rem 2rem;
 border: none;
 outline:none;
 color:#000;
-font-size: 1rem;
+font-size: 1.2rem;
 font-weight: bold;
 resize:none;
 
@@ -73,6 +74,9 @@ resize:none;
     box-shadow: 0 0 0 0.2rem #b9abe0 ;
     backdrop-filter: blur(12rem);
     border-radius: 2rem;
+    justify-items: flex-start;
+    text-align: start;
+    align-items: flex-start;
 }
 &::placeholder{
     color:#000;

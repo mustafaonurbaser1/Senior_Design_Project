@@ -10,20 +10,23 @@ text-align: center;
 background: ${({theme})=> theme.bg};
 `
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.form`
 display:flex;
-flex-direction: row;
-flex-wrap: wrap;
-text-align: center;
-justify-content: space-evenly;
-height: 90vh;
-width: 50vw;
-background:${({theme})=> theme.b3};
+align-items: center;
+flex-direction: column;
+height: 80vh;
+width: 30vw;
+background:rgba(255,255,255,0.15);
 box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
 backdrop-filter: blur(8.5px);
 border-radius: 10px;
-color: ${({theme})=> theme.text};
+color: #000;
+gap:1rem;
+text-transform: uppercase;
+letter-spacing: 0.4rem;
 overflow-y: scroll;
+overflow-x:hidden ;
+
 
 &::-webkit-scrollbar {
     width: 0.5rem;
@@ -68,12 +71,31 @@ overflow-y: scroll;
 `
 
 export const WelcomeText = styled.h2`
-margin:1rem 0 0.5rem 0;
-height: 10%;
+margin:3rem 0 0rem 0;
 letter-spacing: 0.4rem;
 text-transform: uppercase;
 padding:3px 5px;
+letter-spacing: 0.4rem;
+text-transform: uppercase;
 color:${({theme})=> theme.text};
+`
+
+
+export const BigInputContainer = styled.div`
+display: grid;
+width: 80%;
+height: 100%;
+margin: 4rem 0 10rem 0;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+grid-gap: 2rem;
+
+@media only screen and (max-width:1000px){
+    width: 80%;
+}
+
+@media only screen and (max-width:800px){
+    width: 90%;
+}
 `
 
 export const InputContainerSolo = styled.div`
@@ -81,8 +103,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-evenly;
 width: 100%;
-height :15%;
-margin-left: 0%;
+height:100%;
 padding: 1rem;
 `
 
@@ -101,8 +122,34 @@ export const DateAndImageContainer = styled.div`
 display: flex;
 flex-direction: column;
 width: 93.5%;
-height: 30%;
+height: 100%;
 margin:0 5%;
+`
+
+export const ImageContainer = styled.div`
+width: 90%;
+height: 100%;
+margin-top: 1.4rem;
+margin-left:1rem;
+align-items:center;
+justify-content: center;
+
+.Button.Image{
+    margin: 10%;
+    padding: .5rem;
+    text-align: center;
+    justify-content: center;
+    background-color: ${({theme}) => theme.bg2};
+    align-items: center;
+    border: 1px solid;
+    border-radius: 4rem;
+    background-color: linear-gradient(to right, );
+    color: ${({theme}) => theme.item};
+    &:hover{
+        border: 1px solid blue;
+        color: ${({theme}) => theme.primary};
+    }
+}
 `
  
 export const ImportanceTodoButtons = styled.div`
@@ -115,15 +162,10 @@ justify-content: space-evenly;
 margin-top: 10%;
 `
 
-
-export const DateLabel  = styled.label`
-`
-
 export const ButtonContainer = styled.div`
-margin: 1rem 2rem 2rem 0;
 width: 100%;
-display: flex;
-justify-content: flex-end;
+margin-top: 10%;
+margin-bottom: 10%;
 
 `
 

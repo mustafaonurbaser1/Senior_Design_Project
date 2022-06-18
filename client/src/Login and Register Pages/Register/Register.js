@@ -46,7 +46,6 @@ const Register = () => {
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
     setImages(imageList);
     setImageTrue(!isImageTrue)
   };
@@ -165,6 +164,7 @@ const Register = () => {
               <button className='Button Image'
                     style={isDragging ? { color: 'red' } : undefined}
                     onClick={onImageUpload}
+                    type = 'button'
                     {...dragProps}>
                     Add Profile Picture
                   </button>

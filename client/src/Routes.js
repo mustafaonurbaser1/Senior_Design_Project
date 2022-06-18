@@ -7,7 +7,7 @@ import ShowEvents from './pages/ShowEvents';
 import Settings from './pages/Settings';
 import { Login } from './Login and Register Pages/Login/Login';
 import Register from './Login and Register Pages/Register/Register';
-import { Layout } from './components/Layout';
+
 export const RouteS = () => {
 
   const [isLogin,setIsLogin] = useState(true)
