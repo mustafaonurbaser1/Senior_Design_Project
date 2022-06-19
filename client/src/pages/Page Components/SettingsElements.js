@@ -133,7 +133,7 @@ grid-gap: 2rem;
 "date "
 "image"
 "button";
-grid-gap: 5rem;
+grid-gap: 2rem;
 }
 `
 

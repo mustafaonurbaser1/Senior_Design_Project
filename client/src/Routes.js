@@ -7,6 +7,7 @@ import ShowEvents from './pages/ShowEvents';
 import Settings from './pages/Settings';
 import { Login } from './Login and Register Pages/Login/Login';
 import Register from './Login and Register Pages/Register/Register';
+import Home from './Home/pages/index';
 
 export const RouteS = () => {
 
@@ -18,9 +19,9 @@ export const RouteS = () => {
  
     <Routes>
 
-        <Route exact path = "/" element = {<Login/>}></Route>
+        <Route exact path = "/" element = {<Home/>}></Route>
         <Route  path = "/Register" element = {<Register/>}></Route>
-        
+        <Route  path = "/Login" element = {<Login/>}></Route>
         
         {isLogin && <Route  path = "/HomePage" element = {<HomePage/>}></Route>}
         {isLogin &&<Route  path = "/listtodo" element = {<ListTodo/>}></Route>}

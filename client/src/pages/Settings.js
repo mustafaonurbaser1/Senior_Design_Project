@@ -88,12 +88,8 @@ const Settings = () => {
       <MainContainer onSubmit={changeSettings}>
         <WelcomeText>Settings</WelcomeText>
 
+        <BigInputContainer>
 
-          <BigInputContainer>
-
-
-          
-       
           <UsernameDiv>
             <StyledInputSolo required value={username} onChange = {e => setUsername(e.target.value)} placeholder={"Change Username"}/>
           </UsernameDiv>
@@ -115,7 +111,6 @@ const Settings = () => {
         <PhoneInput  placeholder="Enter phone number" value={phone} onChange={setPhone}/>
         </PhoneContainer>
 
-        
           <DateContainer>
             <ThemeProvider
             theme={{
