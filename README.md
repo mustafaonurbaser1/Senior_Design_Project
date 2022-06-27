@@ -41,6 +41,12 @@ Yusuf Çelik --> Frontend with React and Javascript
 >2.  Start react project with **npm start**.
 
 ## Backend
+### EvenTitute(Event(s) of Institution) _Event(s) Management System_
+#### Akdeniz CSE Senior Design Project
+
+It is the Backend Repo which is written using with Java Spring.
+
+
 
 ## Mobile
 
