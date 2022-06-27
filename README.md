@@ -1,5 +1,6 @@
 # Senior_Design_Project Eventitude
 > Eventitude is an event and todo handling project written with Java spring, Flutter and React.
+> In the Eventitude we use PostgreSQL for the database
  ## Project members
 ```
 Mustafa Kaplan --> 20160808050
