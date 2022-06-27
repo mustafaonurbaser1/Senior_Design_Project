@@ -39,7 +39,7 @@ Yusuf Çelik --> Frontend with React and Javascript
 
 ### How the start frontend
 >1.  First enter the client folder
->2.  First you need the install the libraries with **npm install** command if this command won't work you can use **npm install --force**.
+>2.  After that you need the install the libraries with **npm install** command if this command won't work you can use **npm install --force**.
 >3.  Start react project with **npm start**.
 
 ## Backend
